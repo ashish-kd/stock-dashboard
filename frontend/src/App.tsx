@@ -23,10 +23,30 @@ const API_KEY = process.env.REACT_APP_ALPHA_API_KEY
 const SEARCH_API = 'https://www.alphavantage.co/query?function=SYMBOL_SEARCH'
 const DATA_API   = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY'
 
-// Updated Spinner component that doesn't use animate-spin
+// Spinner component using inline styles instead of Tailwind classes
 const Spinner: React.FC = () => (
-  <div className="w-6 h-6 border-4 border-blue-500 border-solid rounded-full animate-pulse" />
+  <div style={{
+    width: '1.5rem',
+    height: '1.5rem',
+    borderRadius: '9999px',
+    borderWidth: '4px',
+    borderStyle: 'solid',
+    borderColor: '#3b82f6 transparent #3b82f6 transparent',
+    display: 'inline-block',
+    animation: 'rotation 1s linear infinite'
+  }}/>
 )
+
+// Add this style to your index.html or create a style.css file
+// and import it into your index.js/ts file
+// @keyframes rotation {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
 
 const App: React.FC = () => {
   const [symbols, setSymbols]     = useState<string[]>(['AAPL'])
@@ -215,6 +235,16 @@ const App: React.FC = () => {
       })}
 
       <p className="text-sm text-center text-gray-500 mt-8">Deployed on GitHub Pages</p>
+
+      {/* Add this style tag to define the rotation animation */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `
+      }} />
     </div>
   )
 }
