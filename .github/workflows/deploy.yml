@@ -16,9 +16,11 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
+        working-directory: frontend
         run: npm ci
 
       - name: Build app with API key
+        working-directory: frontend
         env:
           REACT_APP_ALPHA_API_KEY: ${{ secrets.ALPHA_API_KEY }}
         run: npm run build
