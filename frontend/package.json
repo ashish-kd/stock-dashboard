@@ -25,7 +25,7 @@
   "scripts": {
     "start": "npm-run-all --parallel build:css react-scripts start",
     "build": "npm run build:css && react-scripts build",
-    "build:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "build:css": "npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
