@@ -150,7 +150,7 @@ const App: React.FC = () => {
         ? dataMap[a].latestClose - dataMap[b].latestClose
         : dataMap[b].latestClose - dataMap[a].latestClose
     )
-  }, [symbols, dataMap, sortAsc])
+  }, [symbols])
 
   return (
     <div className="max-w-4xl mx-auto p-4">
