@@ -23,8 +23,9 @@ const API_KEY = process.env.REACT_APP_ALPHA_API_KEY
 const SEARCH_API = 'https://www.alphavantage.co/query?function=SYMBOL_SEARCH'
 const DATA_API   = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY'
 
+// Updated Spinner component that doesn't use animate-spin
 const Spinner: React.FC = () => (
-  <div className="w-6 h-6 border-4 border-blue-500 border-dashed rounded-full animate-spin" />
+  <div className="w-6 h-6 border-4 border-blue-500 border-solid rounded-full animate-pulse" />
 )
 
 const App: React.FC = () => {
