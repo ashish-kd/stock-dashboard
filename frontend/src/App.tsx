@@ -120,7 +120,7 @@ const App: React.FC = () => {
     symbols.forEach(sym => {
       if (!dataMap[sym] && !loadingMap[sym]) fetchStock(sym)
     })
-  }, [symbols])
+  }, [symbols, dataMap, loadingMap])
 
   // Sort symbols by latest price
   const sorted = useMemo(() => {
