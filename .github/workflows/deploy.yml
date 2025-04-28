@@ -28,6 +28,10 @@ jobs:
           REACT_APP_ALPHA_API_KEY: ${{ secrets.ALPHA_API_KEY }}
         run: npm run build
 
+      - name: Verify build output
+        working-directory: frontend
+        run: ls -la
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
