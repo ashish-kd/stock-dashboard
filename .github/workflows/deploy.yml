@@ -26,7 +26,6 @@ jobs:
         working-directory: frontend
         env:
           REACT_APP_ALPHA_API_KEY: ${{ secrets.ALPHA_API_KEY }}
-          CI: false
         run: npm run build
 
       - name: Deploy to GitHub Pages
